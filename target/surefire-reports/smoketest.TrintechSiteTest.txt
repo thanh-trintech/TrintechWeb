@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: smoketest.TrintechSiteTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 0.356 sec <<< FAILURE!
+beforeTest(smoketest.TrintechSiteTest)  Time elapsed: 0.282 sec  <<< FAILURE!
+java.lang.IllegalStateException: The driver executable does not exist: D:\Users\Thanh\workspace\TrintechWeb\src\webdrivers\IEDriverServer32.exe
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:199)
+	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:121)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:116)
+	at org.openqa.selenium.ie.InternetExplorerDriverService.access$000(InternetExplorerDriverService.java:32)
+	at org.openqa.selenium.ie.InternetExplorerDriverService$Builder.findDefaultExecutable(InternetExplorerDriverService.java:167)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:296)
+	at org.openqa.selenium.ie.InternetExplorerDriver.setupService(InternetExplorerDriver.java:251)
+	at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:172)
+	at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:146)
+	at smoketest.TrintechSiteTest.beforeTest(TrintechSiteTest.java:137)
+
