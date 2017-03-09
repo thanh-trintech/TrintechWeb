@@ -14,6 +14,7 @@ import org.testng.annotations.AfterTest;
 public class TrintechSiteTest {
 	private WebDriver driver;
 	static String driverpath = "src/test/resources/webdrivers/";
+
 	
 	
   @Test
