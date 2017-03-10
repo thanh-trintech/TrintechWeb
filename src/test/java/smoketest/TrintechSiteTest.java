@@ -20,6 +20,9 @@ public class TrintechSiteTest {
   @Test
   public void trintechMainTest() throws Throwable {
 	  driver.get("http://www.trintech.com");
+	  
+	  //Homepage
+	  TimeUnit.SECONDS.sleep(2);
 	  String homeTitle = driver.getTitle();
 	  Assert.assertTrue(homeTitle.equals("Your Financial Processes, Transformed | Trintech, Inc."));
 	  System.out.println("I am on the Trintech homepage");
@@ -132,8 +135,62 @@ public class TrintechSiteTest {
 	  TimeUnit.SECONDS.sleep(2);
 	
   }
+  
+  @Test
+  public void reconciliationText() throws Throwable {
+	  driver.get("http://www.trintech.com");
+	  driver.findElement(By.xpath("//*[@id='body']/main/section[1]/div/div[2]/div[1]/div[2]/div/div/a[1]")).click();
+	  TimeUnit.SECONDS.sleep(2);
+	  String reconciliationHeader = driver.findElement(By.xpath("//*[@id='home-slide-1']/div[1]/h2")).getText();
+	  Assert.assertTrue(reconciliationHeader.equals("Account Reconciliation"));
+	  System.out.println("I am at Account Reconciliation");
+	  
+	  //Amortization Scheduling
+	  driver.findElement(By.xpath("//*[@id='home-slide-1']/div[2]/ul/li[1]/a")).click();
+	  String amortizationSchedulingTitle = driver.getTitle();
+	  Assert.assertTrue(amortizationSchedulingTitle.equals("Amortization Scheduling | Trintech"));
+	  System.out.println("I am at Amortization Scheduling");
+	  
+	  //Period End Reconciliation
+	  driver.findElement(By.xpath("//*[@id='body']/main/section[1]/div/div[2]/div[2]/ul/li[1]/a")).click();
+	  String periodEndRecTitle = driver.getTitle();
+	  Assert.assertTrue(periodEndRecTitle.equals("Period-End Reconciliation | Trintech"));
+	  System.out.println("I am at Period-End Reconciliation");
+	  
+	  //Operational Reconciliation
+	  driver.findElement(By.xpath("//*[@id='body']/main/section[1]/div/div[2]/div[2]/ul/li[1]/a")).click();
+	  String operationalRecTitle = driver.getTitle();
+	  Assert.assertTrue(operationalRecTitle.equals("Operational Reconciliation | Trintech"));
+	  System.out.println("I am at Operational Reconciliation");
+	  
+	  //Variance Analysis
+	  driver.findElement(By.xpath("//*[@id='body']/main/section[1]/div/div[2]/div[2]/ul/li[3]/a")).click();
+	  String varianceAnalysisTitle = driver.getTitle();
+	  Assert.assertTrue(varianceAnalysisTitle.equals("Variance Analysis | Trintech"));
+	  System.out.println("I am at Variance Analysis");
+	  
+	  //System-to-System Matching
+	  driver.findElement(By.xpath("//*[@id='body']/main/section[1]/div/div[2]/div[2]/ul/li[4]/a")).click();
+	  String systemMatchingTitle = driver.getTitle();
+	  Assert.assertTrue(systemMatchingTitle.equals("System-to-System Matching | Trintech"));
+	  System.out.println("I am at System-to-System Matching");
+	  
+	  //Financial Transaction Matching
+	  driver.findElement(By.xpath("//*[@id='body']/main/section[1]/div/div[2]/div[2]/ul/li[5]/a")).click();
+	  String financialTransactionMatchingTitle = driver.getTitle();
+	  Assert.assertTrue(financialTransactionMatchingTitle.equals("Financial Transaction Matching | Trintech"));
+	  System.out.println("I am at Financial Transaction Matching");
+	  
+	  
+	  
+	  
+	  
+  
+  }
+  
+  
   @BeforeTest
-  public void beforeTest() {
+  public void beforeTest() throws Throwable {
 	  System.setProperty("webdriver.ie.driver", driverpath+"IEDriverServer32.exe");
 	  driver = new InternetExplorerDriver();
   }

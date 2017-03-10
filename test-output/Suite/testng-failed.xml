@@ -5,6 +5,7 @@
     <classes>
       <class name="smoketest.TrintechSiteTest">
         <methods>
+          <include name="reconciliationText"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
           <include name="trintechMainTest"/>
